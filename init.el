@@ -29,7 +29,7 @@
 
 (setq inhibit-startup-message t)
 (setq initial-scratch-message "")
-  
+(global-set-key (kbd "C-x g") 'magit-status)
 
 
 (windmove-default-keybindings)
