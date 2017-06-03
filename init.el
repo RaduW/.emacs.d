@@ -66,5 +66,3 @@
  ;; If there is more than one, they won't work right.
  )
 (set-face-attribute 'default nil :height 80)
-
-(global-set-key (kbd "C-x g") 'magit-status)
