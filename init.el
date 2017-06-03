@@ -2,12 +2,16 @@
 
 ;;; Set up package
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(add-to-list 'package-archives
-	      '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 (package-initialize)
-
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.org/packages/") t)
+;; (add-to-list 'package-archives
+;; 	      '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 ;;; Bootstrap use-package
 ;; Install use-package if it's not already installed.
 ;; use-package is used to configure the rest of the packages.
@@ -37,13 +41,30 @@
 ;; initial window
 (setq initial-frame-alist
       '(
-        (width . 220) ; character
-        (height . 70) ; lines
+        (width . 140) ; character
+        (height . 50) ; lines
         ))
 
 ;; default/sebsequent window
 (setq default-frame-alist
       '(
-        (width . 220) ; character
-        (height . 70) ; lines
+        (width . 140) ; character
+        (height . 50) ; lines
         ))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (magit org typescript-mode markdown-mode clojure-mode csharp-mode))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+(set-face-attribute 'default nil :height 80)
+
+(global-set-key (kbd "C-x g") 'magit-status)
