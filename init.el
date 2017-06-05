@@ -41,15 +41,15 @@
 ;; initial window
 (setq initial-frame-alist
       '(
-        (width . 140) ; character
-        (height . 50) ; lines
+        (width . 240) ; character
+        (height . 75) ; lines
         ))
 
 ;; default/sebsequent window
 (setq default-frame-alist
       '(
-        (width . 140) ; character
-        (height . 50) ; lines
+        (width . 240) ; character
+        (height . 75) ; lines
         ))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -65,4 +65,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(set-face-attribute 'default nil :height 80)
+(set-face-attribute 'default nil :height 100)
+
+
+
+
+
+
